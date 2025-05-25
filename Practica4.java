@@ -1,7 +1,7 @@
 /**
  * @author Manuel Araújo Baño
  * @expediente 22298227
- * @author Daniel Gutierrez
+ * @author Daniel Gutierrez Torres
  */
 
 class Practica4 {
