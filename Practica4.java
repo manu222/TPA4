@@ -1,4 +1,8 @@
-import java.util.Vector;
+/**
+ * @author Manuel Araújo Baño
+ * @expediente 22298227
+ * @author Daniel Gutierrez
+ */
 
 class Practica4 {
 
@@ -109,38 +113,13 @@ class Practica4 {
             Clave vertice = noVisitados.consultar(1);
             System.out.println("TEST");
             Grafo.profREC(grafo, vertice, noVisitados);
-            //profundidadComponente(grafo, vertice, noVisitados);
             numComponentes++; // Una nueva componente fue explorada
         }
 
         return numComponentes;
     }
 
-    /**
-     * Método auxiliar recursivo que recorre en profundidad todos los vértices
-     * alcanzables desde el vértice 'inicio' y los elimina de la lista de no visitados.
-     * @param grafo El grafo a recorrer.
-     * @param inicio Vértice de inicio para el DFS.
-     * @param noVisitados Lista de vértices no visitados (se irá modificando).
-     */
-    private static <Clave, InfoV, Coste> void profundidadComponente(Grafo<Clave, InfoV, Coste> grafo,
-                                                                    Clave inicio,
-                                                                    Lista<Clave> noVisitados) {
-        // Marcar como visitado eliminando de la lista de no visitados
-        int pos = noVisitados.buscar(inicio);
-        if (pos != 0) {
-            noVisitados.borrar(pos);
-        }
-
-        // Visitar recursivamente todos los sucesores no visitados
-        Lista<Clave> sucesores = grafo.listaSucesores(inicio);
-        for (int i = 1; i <= sucesores.longitud(); i++) {
-            Clave sucesor = sucesores.consultar(i);
-            if (noVisitados.buscar(sucesor) != 0) {
-                profundidadComponente(grafo, sucesor, noVisitados);
-            }
-        }
-    }
+    
 
     
     /**
